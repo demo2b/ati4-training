@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/ati4",
+        "create path (nt:unstructured) /content/dam/ati4/jcr:content",
+        "set properties on /content/dam/ati4/jcr:content\n  set cq:conf{String} to /conf/ati4\n  set jcr:title{String} to \"ATI 4 Training\"\nend"
+    ]
+}
