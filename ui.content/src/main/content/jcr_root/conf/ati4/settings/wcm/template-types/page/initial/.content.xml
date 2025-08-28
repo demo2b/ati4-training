@@ -4,14 +4,14 @@
     <jcr:content
         cq:template="/conf/ati4/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="ati4/components/page">
+        sling:resourceType="ati4/page-components/base-page">
         <root
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="ati4/components/container"
+            sling:resourceType="ati4/component-proxies/container"
             layout="responsiveGrid">
             <container
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ati4/components/container"
+                sling:resourceType="ati4/component-proxies/container"
                 layout="responsiveGrid"/>
         </root>
     </jcr:content>

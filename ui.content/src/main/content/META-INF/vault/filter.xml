@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/conf/ati4" mode="merge"/>
+
+    <filter root="/conf/ati4" mode="replace"/>
     <filter root="/content/ati4" mode="merge"/>
-    <filter root="/content/dam/ati4" mode="merge">
-        <exclude pattern="/content/dam/ati4(/.*)?"/>
-        <include pattern="/content/dam/ati4/jcr:content(/.*)?"/>
-    </filter>
-    <filter root="/content/dam/ati4/asset.jpg" mode="merge"/>
-    <filter root="/content/experience-fragments/ati4" mode="merge"/>
+
 </workspaceFilter>

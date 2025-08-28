@@ -4,5 +4,5 @@
     <jcr:content
         jcr:description="Generic template for empty pages of My Site"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Page"/>
+        jcr:title="Base Page Template Type"/>
 </jcr:root>

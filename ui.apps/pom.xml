@@ -114,14 +114,6 @@
 
         <dependency>
             <groupId>com.ati4.training</groupId>
-            <artifactId>ati4.ui.frontend</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.ati4.training</groupId>
             <artifactId>ati4.ui.apps.structure</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
