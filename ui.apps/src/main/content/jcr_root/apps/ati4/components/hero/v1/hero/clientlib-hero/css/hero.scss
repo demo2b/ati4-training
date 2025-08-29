@@ -1,0 +1,43 @@
+.container .hero-wrapper {
+    height: 640px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+
+    .hero-background-wrapper {
+        width: inherit;
+        height: inherit;
+
+        img {
+            height: 640px;
+        }
+    }
+
+    .hero-texts-wrapper {
+        position: absolute;
+        bottom: 108px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 180px;
+        width: inherit;
+        z-index: 2;
+        color: white;
+
+        .hero-kicker-wrapper, .hero-title-wrapper {
+            font-family: "__quicksand_46a9db", "__quicksand_Fallback_46a9db" , sans-serif;
+            text-shadow: 0 1px #747d81;
+        }
+
+        .hero-kicker-wrapper {
+            margin-left: -5px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .hero-title-wrapper {
+            font-size: 6.25rem;
+            font-weight: 600;
+        }
+    }
+}

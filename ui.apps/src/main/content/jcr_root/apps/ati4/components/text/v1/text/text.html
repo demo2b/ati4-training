@@ -1,0 +1,7 @@
+<sly data-sly-test.hasContent="${properties.text}"
+     data-sly-use.template="./templates/text-templates.html"
+     data-sly-call="${template.main @ text=properties.text, standalone=true}">
+</sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty=!hasContent}">
+</sly>

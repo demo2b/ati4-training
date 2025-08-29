@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="title (v1)"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <properties jcr:primaryType="nt:unstructured"
+                        jcr:title="Text"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <text jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                  fieldDescription="Small text to be displayed in on top of the headline."
+                                  fieldLabel="Text Title"
+                                  name="./title"/>
+                            <html-tag granite:id="htmltag"
+                                      granite:class="cq-dialog-dropdown-showhide"
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                      fieldDescription="The HTML Tag is the tag set for the titles of the component and must be chosen according to the hierarchy of all the components of the page to be SEO and Accessibility compliant"
+                                      fieldLabel="Title Level"
+                                      required="{Boolean}true"
+                                      name="./headingLevel">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <h1 granite:hide="${cqDesign.disableStatic}"
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H1"
+                                        value="h1"/>
+                                    <h2 granite:hide="${cqDesign.disableStatic}"
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H2"
+                                        value="h2"/>
+                                    <h3 granite:hide="${cqDesign.disableStatic}"
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3"
+                                        value="h3"/>
+                                    <h4 granite:hide="${cqDesign.disableStatic}"
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4"
+                                        value="h4"/>
+                                    <h5 granite:hide="${cqDesign.disableStatic}"
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5"
+                                        value="h5"/>
+                                    <h6 granite:hide="${cqDesign.disableStatic}"
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H6"
+                                        value="h6"/>
+                                </items>
+                            </html-tag>
+                        </items>
+                    </column>
+                </items>
+            </properties>
+        </items>
+    </content>
+</jcr:root>

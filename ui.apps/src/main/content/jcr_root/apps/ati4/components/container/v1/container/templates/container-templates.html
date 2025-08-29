@@ -1,0 +1,13 @@
+<template data-sly-template.main data-sly-use.container="com.adobe.cq.wcm.core.components.models.LayoutContainer">
+    <sly data-sly-test="${wcmmode.edit}" data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"></sly>
+    <div data-sly-use.templates="core/wcm/components/commons/v1/templates.html" class="container">
+        <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+             data-sly-use.allowedTemplate="allowedcomponents.html"
+             data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
+        <sly data-sly-test="${!isAllowedApplicable}"
+             data-sly-set.items="${container.children || container.items}"
+             data-sly-repeat="${items}" data-sly-resource="${item.resource || item.path @ decoration=true}"></sly>
+        <sly data-sly-test="${!isAllowedApplicable && !wcmmode.disabled}"
+             data-sly-resource="${resource.path @ resourceType='core/wcm/components/container/v1/container/new', appendPath='/*', decorationTagName='div', cssClassName='new section'}"></sly>
+    </div>
+</template>

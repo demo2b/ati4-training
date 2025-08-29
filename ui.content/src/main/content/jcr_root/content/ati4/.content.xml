@@ -4,17 +4,16 @@
     <jcr:content
         cq:allowedTemplates="[/conf/ati4/settings/wcm/templates/(?!xf-).*]"
         cq:conf="/conf/ati4"
-        cq:redirectTarget="/content/ati4/us/en"
-        cq:template="/conf/ati4/settings/wcm/templates/page-content"
+        cq:redirectTarget="/content/ati4/en"
+        cq:template="/conf/ati4/settings/wcm/templates/root-template"
         jcr:primaryType="cq:PageContent"
         jcr:title="ATI 4 Training"
         sling:configRef="/conf/ati4"
         sling:redirect="{Boolean}true"
         sling:redirectStatus="{Long}302"
-        sling:resourceType="ati4/components/page">
+        sling:resourceType="ati4/page-components/base-page">
         <image jcr:primaryType="nt:unstructured">
             <file/>
         </image>
     </jcr:content>
-    <us/>
 </jcr:root>

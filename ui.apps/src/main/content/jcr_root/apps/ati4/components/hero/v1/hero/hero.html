@@ -1,0 +1,6 @@
+<sly data-sly-use.template="/apps/ati4/components/hero/v1/hero/templates/hero-templates.html"
+     data-sly-set.imageReference="${properties.fileReference}"
+     data-sly-set.kickerText="${properties.text}"
+     data-sly-set.titleText="${properties.title}"
+     data-sly-set.level="${properties.headingLevel}"
+     data-sly-call="${template.main @ imageReference=imageReference, kicker=kickerText, title=titleText, level=level}"></sly>

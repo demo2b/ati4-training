@@ -1,0 +1,16 @@
+<template data-sly-template.main="${@ imageReference, kicker, title, level}">
+    <div class="hero-wrapper">
+        <div class="hero-background-wrapper"
+             data-sly-use.template="/apps/ati4/components/image/v1/image/templates/image-templates.html"
+             data-sly-call="${template.main @ imageReference=imageReference}"></div>
+
+        <div class="hero-texts-wrapper">
+            <div class="hero-kicker-wrapper"
+                 data-sly-use.template="/apps/ati4/components/text/v1/text/templates/text-templates.html"
+                 data-sly-call="${template.main @ text=kicker, standalone=false}"></div>
+            <div class="hero-title-wrapper"
+                 data-sly-use.template="/apps/ati4/components/title/v1/title/templates/title-templates.html"
+                 data-sly-call="${template.main @ text=title, level=level || 'h1'}"></div>
+        </div>
+    </div>
+</template>

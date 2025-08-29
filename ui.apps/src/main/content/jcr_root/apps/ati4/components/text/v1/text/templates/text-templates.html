@@ -1,0 +1,6 @@
+<template data-sly-template.main="${@ text='', standalone=true, css=''}"
+          data-sly-set.standaloneClass="${standalone ? 'standalone' : ''}">
+   <div class="text-wrapper ${standaloneClass @ context='attribute'}">
+      ${text @ context='html'}
+   </div>
+</template>
