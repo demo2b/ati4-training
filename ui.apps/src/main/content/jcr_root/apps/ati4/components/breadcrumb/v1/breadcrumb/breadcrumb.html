@@ -1,0 +1,7 @@
+<div data-sly-use.model="com.ati4.training.core.models.v1.BreadcrumbModel"
+     data-sly-test="${model.breadcrumbPages.size > 1}"
+     class="breadcrumb-wrapper">
+    <ul data-sly-list="${model.breadcrumbPages}">
+        <li><a href="${item.path @ extension='html'}">${item.title}</a></li>
+    </ul>
+</div>

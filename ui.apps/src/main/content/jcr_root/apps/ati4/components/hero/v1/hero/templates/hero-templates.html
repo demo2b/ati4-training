@@ -1,5 +1,6 @@
 <template data-sly-template.main="${@ imageReference, kicker, title, level}">
     <div class="hero-wrapper">
+        <sly data-sly-resource="${'breadcrumb' @ resourceType='ati4/components/breadcrumb/v1/breadcrumb'}"></sly>
         <div class="hero-background-wrapper"
              data-sly-use.template="/apps/ati4/components/image/v1/image/templates/image-templates.html"
              data-sly-call="${template.main @ imageReference=imageReference}"></div>

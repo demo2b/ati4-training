@@ -12,9 +12,9 @@ import java.util.Iterator;
 import java.util.List;
 
 @Model(
-        adaptables = SlingHttpServletRequest.class,
-        adapters = NavigationModel.class,
-        resourceType = NavigationModel.RESOURCE_TYPE
+    adaptables = SlingHttpServletRequest.class,
+    adapters = NavigationModel.class,
+    resourceType = NavigationModel.RESOURCE_TYPE
 )
 public class NavigationModelImpl implements NavigationModel {
 
@@ -25,7 +25,7 @@ public class NavigationModelImpl implements NavigationModel {
 
     @PostConstruct
     protected void postConstruct() {
-        // Retrieving langauge root page  eg:'/content/ati4/es-MX'
+        // Retrieving language root page  eg:'/content/ati4/es-MX'
         Page rootPage = currentPage.getAbsoluteParent(2);
 
         // Iterating over subpages having child pages

@@ -5,6 +5,7 @@ body {
     align-items: center;
     flex-direction: column;
     max-width: 100svw;
+    font-family: "__quicksand_46a9db", "__quicksand_Fallback_46a9db" , sans-serif;
 
     > div:not(.navigation) {
         max-width: 1640px;
@@ -12,11 +13,21 @@ body {
 
     .root.container {
         display: flex;
+        margin-top: 150px;
     }
 
     .container {
         display: flex;
         flex-direction: column;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        color: unset;
+        text-decoration: none;
     }
 }
 

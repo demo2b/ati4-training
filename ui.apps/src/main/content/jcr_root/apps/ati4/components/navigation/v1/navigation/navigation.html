@@ -1,11 +1,11 @@
 <nav class="navigation-wrapper">
     <div class="navigation-top">
-        <div class="navigation-logo"
+        <a class="navigation-logo" href="/"
              data-sly-use.template="/apps/ati4/components/image/v1/image/templates/image-templates.html"
-             data-sly-call="${template.main @ imageReference='/content/dam/ati4/images/naos-logo.png'}"></div>
+             data-sly-call="${template.main @ imageReference='/content/dam/ati4/images/naos-logo.png'}"></a>
         <div class="navigation-icons" data-sly-use.template="/apps/ati4/htl-templates/icons-templates.html">
-            <sly data-sly-call="${template.main @ iconName='store-locator'}"></sly>
-            <sly data-sly-call="${template.main @ iconName='my-account'}"></sly>
+            <a href="#" data-sly-call="${template.main @ iconName='store-locator'}"></a>
+            <a href="#" data-sly-call="${template.main @ iconName='my-account'}"></a>
         </div>
     </div>
     <ul class="navigation-menu"
