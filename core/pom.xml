@@ -42,9 +42,12 @@
                             <goal>bnd-process</goal>
                         </goals>
                         <configuration>
-                            <bnd><![CDATA[
-Import-Package: javax.annotation;version=0.0.0,*
-                                ]]></bnd>
+                            <bnd>
+                                <![CDATA[
+                                    Import-Package: javax.annotation;version=0.0.0,*
+                                    Export-Package: com.ati4.training.core.models.*
+                                ]]>
+                            </bnd>
                         </configuration>
                     </execution>
                 </executions>

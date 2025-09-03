@@ -1,8 +1,10 @@
 <template data-sly-template.main="${@ direction, imageReference, alt='', title, text, ctaText, ctaLink, ctaIcon}">
     <div class="push-image-edito-wrapper ${direction}">
-        <div class="push-image-edito-image-wrapper"
-             data-sly-use.template="/apps/ati4/components/image/v1/image/templates/image-templates.html"
-             data-sly-call="${template.main @ imageReference=imageReference}"></div>
+        <div class="push-image-edito-image-wrapper">
+            <div class="push-image-edito-image"
+                  data-sly-use.template="/apps/ati4/components/image/v1/image/templates/image-templates.html"
+                  data-sly-call="${template.main @ imageReference=imageReference}"></div>
+        </div>
         <div class="push-image-edito-column">
             <div class="push-image-edito-title-wrapper"
                  data-sly-use.template="/apps/ati4/components/title/v1/title/templates/title-templates.html"
