@@ -10,6 +10,7 @@
 
         img {
             height: 640px;
+            width: 100%;
         }
     }
 
@@ -21,11 +22,12 @@
         margin-left: 180px;
         width: inherit;
         z-index: 2;
-        color: white;
 
         .hero-kicker-wrapper, .hero-title-wrapper {
-            font-family: "__quicksand_46a9db", "__quicksand_Fallback_46a9db" , sans-serif;
             text-shadow: 0 1px #747d81;
+            p,h1,h2,h3,h4,h5,h6 {
+                color: white!important;
+            }
         }
 
         .hero-kicker-wrapper {

@@ -3,6 +3,7 @@
 
     <filter root="/apps/ati4/clientlibs"/>
     <filter root="/apps/ati4/components"/>
+    <filter root="/apps/ati4/htl-templates"/>
     <filter root="/apps/ati4/component-proxies"/>
     <filter root="/apps/ati4/page-components"/>
 

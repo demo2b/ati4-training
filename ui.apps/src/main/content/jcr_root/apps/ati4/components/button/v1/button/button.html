@@ -1,0 +1,7 @@
+<sly data-sly-test.hasContent="${properties.ctaText}"
+     data-sly-use.template="./templates/button-templates.html"
+     data-sly-call="${template.main @ ctaText=properties.ctaText, ctaLink=properties.ctaLink, ctaIcon=properties.ctaIcon}">
+</sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty=!hasContent}">
+</sly>

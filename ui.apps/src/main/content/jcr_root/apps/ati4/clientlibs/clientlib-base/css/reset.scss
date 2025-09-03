@@ -3,7 +3,12 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    max-width: 1640px;
+    max-width: 100svw;
+    align-items: center;
+
+    > div {
+        max-width: 1640px;
+    }
 }
 
 h1,h2,h3,h4,h5 {

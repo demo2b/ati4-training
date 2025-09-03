@@ -1,0 +1,47 @@
+.container .push-image-edito-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 128px;
+    flex-direction: row;
+
+    &.left {
+        flex-direction: row-reverse;
+    }
+
+    .push-image-edito-image-wrapper {
+        max-width: 600px;
+        > img {
+            max-width: inherit;
+        }
+    }
+
+    .push-image-edito-column {
+        display: flex;
+        flex-direction: column;
+        max-width: 515px;
+        justify-content: center;
+
+        .title-wrapper {
+            font-size: 2.375rem;
+            font-weight: 700;
+        }
+
+        .text-wrapper {
+            margin-top: 30px;
+
+            p {
+                font-size: 1rem;
+                line-height: 30px;
+            }
+
+            p:not(:first-child) {
+                margin-top: 16px;
+            }
+
+        }
+
+        .button-wrapper {
+            margin-top: 50px;
+        }
+    }
+}
