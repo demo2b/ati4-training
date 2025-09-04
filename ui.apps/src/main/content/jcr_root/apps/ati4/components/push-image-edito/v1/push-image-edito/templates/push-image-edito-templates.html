@@ -1,22 +1,45 @@
-<template data-sly-template.main="${@ direction, imageReference, alt='', title, text, ctaText, ctaLink, ctaIcon}">
-    <div class="push-image-edito-wrapper ${direction}">
+<template data-sly-template.main="${@ properties, model}">
+    <div class="push-image-edito-wrapper ${properties.direction}">
         <div class="push-image-edito-image-wrapper">
             <div class="push-image-edito-image"
                   data-sly-use.template="/apps/ati4/components/image/v1/image/templates/image-templates.html"
-                  data-sly-call="${template.main @ imageReference=imageReference}"></div>
+                  data-sly-call="${template.main @ imageReference=properties.fileReference}"></div>
         </div>
         <div class="push-image-edito-column">
-            <div class="push-image-edito-title-wrapper"
-                 data-sly-use.template="/apps/ati4/components/title/v1/title/templates/title-templates.html"
-                 data-sly-call="${template.main @ text=title, level=level || 'h1'}"></div>
-            <div class="push-image-edito-text-wrapper"
-                 data-sly-use.template="/apps/ati4/components/text/v1/text/templates/text-templates.html"
-                 data-sly-call="${template.main @ text=text, standalone=false}"></div>
-            <sly data-sly-test="${ctaText}">
-                <div class="push-image-edito-button-wrapper"
-                     data-sly-use.template="/apps/ati4/components/button/v1/button/templates/button-templates.html"
-                     data-sly-call="${template.main @ ctaText=ctaText, ctaLink=ctaLink, ctaIcon=ctaIcon}"></div>
+            <sly data-sly-test="${!properties.mode || properties.mode == 'simple'}"
+                 data-sly-call="${simple @ properties=properties}">
+            </sly>
+            <sly data-sly-test="${properties.mode == 'accordion'}"
+                 data-sly-call="${accordion @ properties=properties, model=model}">>
             </sly>
         </div>
     </div>
+</template>
+
+<template data-sly-template.simple="${@ properties}">
+    <div class="push-image-edito-title-wrapper"
+         data-sly-use.template="/apps/ati4/components/title/v1/title/templates/title-templates.html"
+         data-sly-call="${template.main @ text=properties.title, level=properties.headingLevel}"></div>
+    <div class="push-image-edito-text-wrapper"
+         data-sly-use.template="/apps/ati4/components/text/v1/text/templates/text-templates.html"
+         data-sly-call="${template.main @ text=properties.text, standalone=false}"></div>
+    <sly data-sly-test.ctaText="${properties.ctaText}">
+        <div class="push-image-edito-button-wrapper"
+             data-sly-use.template="/apps/ati4/components/button/v1/button/templates/button-templates.html"
+             data-sly-call="${template.main @ ctaText=ctaText, ctaLink=properties.ctaLink, ctaIcon=properties.ctaIcon, type='link'}"></div>
+    </sly>
+</template>
+
+<template data-sly-template.accordion="${@ properties, model}">
+    <sly data-sly-list="${model.editoItems}">
+        <div class="accordion-wrapper" data-sly-set.childProperties="${item}">
+            <div class="push-image-edito-title-wrapper"
+                 data-sly-use.template="/apps/ati4/components/title/v1/title/templates/title-templates.html"
+                 data-sly-call="${template.main @ text=item.title, level=item.headingLevel}">
+            </div>
+            <div class="push-image-edito-text-wrapper"
+                 data-sly-use.template="/apps/ati4/components/text/v1/text/templates/text-templates.html"
+                 data-sly-call="${template.main @ text=item.text, standalone=false}"></div>
+        </div>
+    </sly>
 </template>

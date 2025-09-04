@@ -1,0 +1,28 @@
+body {
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100svw;
+    font-family: "__quicksand_46a9db", "__quicksand_Fallback_46a9db" , sans-serif;
+
+    > div:not(.navigation) {
+        max-width: 1640px;
+    }
+
+    .root.container {
+        display: flex;
+        margin-top: 150px;
+        width: 100%;
+
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        &.hero-pink {
+            background-image: radial-gradient(107.79% 77.19% at -43.89% 4.27%, hsla(4, 18%, 49%, .6) 0, hsla(15, 26%, 73%, 0) 100%);
+        }
+    }
+}

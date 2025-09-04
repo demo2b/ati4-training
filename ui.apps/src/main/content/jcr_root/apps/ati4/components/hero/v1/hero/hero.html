@@ -3,7 +3,7 @@
      data-sly-set.kickerText="${properties.text}"
      data-sly-set.titleText="${properties.title}"
      data-sly-set.level="${properties.headingLevel}"
-     data-sly-set.hasContent="${imageReference}"
+     data-sly-test.hasContent="${imageReference}"
      data-sly-call="${template.main @ imageReference=imageReference, kicker=kickerText, title=titleText, level=level}"></sly>
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
      data-sly-call="${templates.placeholder @ isEmpty=!hasContent}">

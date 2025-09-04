@@ -1,6 +1,7 @@
 .container .push-image-edito-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 128px;
     flex-direction: row;
     margin: 80px 0;
@@ -20,6 +21,7 @@
                 display: flex;
                 flex-direction: row;
                 align-items: flex-end;
+                height: 536px;
                 &:before {
                     content: '';
                     height: 370px;
@@ -28,6 +30,8 @@
                     position: absolute;
                 }
                 img {
+                    height: 100%;
+                    object-fit: cover;
                     margin-left: 23px;
                     max-width: inherit;
                     width: calc(100% - 23px);
@@ -58,11 +62,25 @@
             p:not(:first-child) {
                 margin-top: 16px;
             }
-
         }
 
         .button-wrapper {
             margin-top: 50px;
+            width: fit-content;
+        }
+
+        .accordion-wrapper {
+
+            .push-image-edito-title-wrapper h3 {
+                margin: 20px 0;
+                font-size: 1.625rem;
+            }
+
+            .push-image-edito-text-wrapper {
+                height: 0;
+                overflow: hidden;
+                border-bottom: 1px solid #c2c2c2;
+            }
         }
     }
 }

@@ -3,5 +3,18 @@
     position: absolute;
     font-size: .75rem;
     font-weight: 500;
-    top: 30px
+    top: 30px;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+
+        li {
+            a.bolded {
+                font-weight: 700;
+            }
+        }
+    }
+
 }

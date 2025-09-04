@@ -1,5 +1,6 @@
-<template data-sly-template.main="${@ text, level='h1'}">
-    <div class="title-wrapper">
+<template data-sly-template.main="${@ text, level='h1', standalone=true, css=''}"
+          data-sly-set.standaloneClass="${standalone ? 'standalone' : ''}">
+    <div class="title-wrapper ${standaloneClass @ context='attribute'}">
         <h1 data-sly-element="${level}">${text}</h1>
     </div>
 </template>

@@ -1,14 +1,7 @@
-<sly data-sly-use.template="./templates/push-image-edito-templates.html"
-     data-sly-set.direction="${properties.direction || 'right'}"
-     data-sly-set.imageReference="${properties.fileReference}"
-     data-sly-set.titleText="${properties.title}"
-     data-sly-set.text="${properties.text}"
-     data-sly-set.level="${properties.headingLevel || 'h1'}"
-     data-sly-set.ctaText="${properties.ctaText}"
-     data-sly-set.ctaLink="${properties.ctaLink}"
-     data-sly-set.ctaIcon="${properties.ctaIcon}"
-     data-sly-set.hasContent="${imageReference}"
-     data-sly-call="${template.main @ direction=direction, imageReference=imageReference, title=titleText, text=text, level=level, ctaText=ctaText, ctaLink=ctaLink, ctaIcon=ctaIcon}"></sly>
+<sly data-sly-test.hasContent="${properties.fileReference}"
+     data-sly-use.template="./templates/push-image-edito-templates.html"
+     data-sly-use.model="com.ati4.training.core.models.v1.PushImageEdito"
+     data-sly-call="${template.main @ properties=properties, model=model}"></sly>
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
      data-sly-call="${templates.placeholder @ isEmpty=!hasContent}">
 </sly>

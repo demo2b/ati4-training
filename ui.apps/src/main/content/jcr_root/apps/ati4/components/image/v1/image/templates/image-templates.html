@@ -1,5 +1,5 @@
 <template data-sly-template.main="${@ imageReference, alt=''}">
     <div class="image-wrapper">
-        <img src="${imageReference}" alt="${alt}">
+        <img src="${imageReference}" alt="${alt}" loading="lazy" decoding="async">
     </div>
 </template>

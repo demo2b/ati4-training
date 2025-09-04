@@ -6,7 +6,7 @@ import org.osgi.annotation.versioning.ConsumerType;
 import java.util.List;
 
 @ConsumerType
-public interface BreadcrumbModel {
+public interface Breadcrumb {
 
     String RESOURCE_TYPE = "/apps/ati4-training/components/breadcrumb/v1/breadcrumb";
 

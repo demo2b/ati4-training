@@ -1,6 +1,6 @@
-package com.ati4.training.core.impl;
+package com.ati4.training.core.impl.v1;
 
-import com.ati4.training.core.models.v1.NavigationModel;
+import com.ati4.training.core.models.v1.Navigation;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Model;
@@ -13,10 +13,10 @@ import java.util.List;
 
 @Model(
     adaptables = SlingHttpServletRequest.class,
-    adapters = NavigationModel.class,
-    resourceType = NavigationModel.RESOURCE_TYPE
+    adapters = Navigation.class,
+    resourceType = Navigation.RESOURCE_TYPE
 )
-public class NavigationModelImpl implements NavigationModel {
+public class NavigationImpl implements Navigation {
 
     @ScriptVariable
     private Page currentPage;

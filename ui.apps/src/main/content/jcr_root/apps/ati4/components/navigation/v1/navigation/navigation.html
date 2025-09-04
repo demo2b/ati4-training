@@ -9,7 +9,7 @@
         </div>
     </div>
     <ul class="navigation-menu"
-        data-sly-use.model="com.ati4.training.core.models.v1.NavigationModel"
+        data-sly-use.model="com.ati4.training.core.models.v1.Navigation"
         data-sly-test="${model.navigationPages.size > 0}"
         data-sly-use.titleTemplate="/apps/ati4/components/title/v1/title/templates/title-templates.html"
         data-sly-list="${model.navigationPages}">
@@ -20,7 +20,7 @@
                 <ul class="navigation-entry-content-column"
                     data-sly-list.subItem="${item.listChildren}">
                     <li>
-                        <sly data-sly-call="${titleTemplate.main @ text=subItem.title, level='h5'}"></sly>
+                        <a href="${subItem.path @ extension='html'}" data-sly-call="${titleTemplate.main @ text=subItem.title, level='h5'}"></a>
                     </li>
                 </ul>
             </div>

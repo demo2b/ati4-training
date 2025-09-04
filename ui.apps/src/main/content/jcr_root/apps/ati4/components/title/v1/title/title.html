@@ -1,3 +1,7 @@
-<sly data-sly-use.template="./templates/title-templates.html"
-     data-sly-call="${template.main @ title=properties.title, level=properties.headingLevel}">
+<sly data-sly-test.hasContent="${properties.title}"
+     data-sly-use.template="./templates/title-templates.html"
+     data-sly-call="${template.main @ text=properties.title, level=properties.headingLevel, standalone=true}">
+</sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty=!hasContent}">
 </sly>

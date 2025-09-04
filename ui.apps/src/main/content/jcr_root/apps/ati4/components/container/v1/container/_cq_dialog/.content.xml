@@ -1,40 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-    jcr:primaryType="nt:unstructured"
-    jcr:title="Container"
-    sling:resourceType="cq/gui/components/authoring/dialog">
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Container (v1)"
+          sling:resourceType="cq/gui/components/authoring/dialog">
     <content
-        jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/container">
-        <items jcr:primaryType="nt:unstructured">
-            <tabs
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/tabs"
-                maximized="{Boolean}true">
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured" sling:hideChildren="[tabs]">
+            <properties
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Container"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                 <items jcr:primaryType="nt:unstructured">
-                    <container
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Location"
-                        sling:resourceType="granite/ui/components/coral/foundation/container"
-                        margin="{Boolean}true">
-                        <items jcr:primaryType="nt:unstructured">
-                            <columns
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                                margin="{Boolean}true">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured" >
+                            <background-type
+                                    granite:class="cq-dialog-dropdown-showhide"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Background Type"
+                                    name="./backgroundType">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <column
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <items jcr:primaryType="nt:unstructured">
-                                        </items>
-                                    </column>
+                                    <none jcr:primaryType="nt:unstructured" text="None" value="none"/>
+                                    <filled jcr:primaryType="nt:unstructured" text="Filled" value="filled"/>
+                                    <gradient jcr:primaryType="nt:unstructured" text="Gradient" value="gradient"/>
                                 </items>
-                            </columns>
+                                <granite:data jcr:primaryType="nt:unstructured" cq-dialog-dropdown-showhide-target=".background-type-showhide-target"/>
+                            </background-type>
+                            <container-filled jcr:primaryType="nt:unstructured"
+                                             granite:class="background-type-showhide-target"
+                                             sling:resourceType="granite/ui/components/coral/foundation/container"
+                                             jcr:title="Filled Background">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color jcr:primaryType="nt:unstructured"
+                                          sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                          fieldLabel="Fill Color"
+                                          name="./color"/>
+                                </items>
+                                <granite:data jcr:primaryType="nt:unstructured" showhidetargetvalue="filled" />
+                            </container-filled>
+                            <container-gradient jcr:primaryType="nt:unstructured"
+                                             granite:class="background-type-showhide-target"
+                                             sling:resourceType="granite/ui/components/coral/foundation/container"
+                                             jcr:title="Gradient Background">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <gradients
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Gradient"
+                                            name="./gradient">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hero-pink jcr:primaryType="nt:unstructured" text="Hero Pink" value="hero-pink"/>
+                                        </items>
+                                    </gradients>
+                                </items>
+                                <granite:data jcr:primaryType="nt:unstructured" showhidetargetvalue="gradient" />
+                            </container-gradient>
                         </items>
-                    </container>
+                    </column>
                 </items>
-            </tabs>
+            </properties>
         </items>
     </content>
 </jcr:root>

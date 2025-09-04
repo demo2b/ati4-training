@@ -1,6 +1,9 @@
-<template data-sly-template.main data-sly-use.container="com.adobe.cq.wcm.core.components.models.LayoutContainer">
+<template data-sly-template.main="${@ backgroundType='', backgroundColor='', backgroundGradient=''}"
+          data-sly-use.container="com.adobe.cq.wcm.core.components.models.LayoutContainer">
     <sly data-sly-test="${wcmmode.edit}" data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"></sly>
-    <div data-sly-use.templates="core/wcm/components/commons/v1/templates.html" class="container">
+    <div data-sly-set.bgColor="${backgroundType == 'filled' ? backgroundColor : 'transparent'}"
+         data-sly-set.bgGradient="${backgroundType == 'gradient' ? backgroundGradient : ''}"
+        data-sly-use.templates="core/wcm/components/commons/v1/templates.html" style="background-color: ${bgColor @ context='unsafe'}" class="container ${bgGradient}" >
         <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
              data-sly-use.allowedTemplate="allowedcomponents.html"
              data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
