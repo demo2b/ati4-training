@@ -21,7 +21,7 @@ public class NavigationImpl implements Navigation {
     @ScriptVariable
     private Page currentPage;
 
-    final private List<Page> navigationPages = new ArrayList<>();
+    private final List<Page> navigationPages = new ArrayList<>();
 
     @PostConstruct
     protected void postConstruct() {
