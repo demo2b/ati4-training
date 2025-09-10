@@ -1,0 +1,27 @@
+<template data-sly-template.main="${@ source, fileReference, title, headingLevel, playingTime, description}">
+    <div class="video-wrapper">
+        <sly data-sly-use.template="/apps/ati4/components/title/v1/title/templates/title-templates.html"
+             data-sly-call="${template.main @ text=title, level=headingLevel}"></sly>
+
+        <div class="video-reading-time">
+            <sly data-sly-use.template="/apps/ati4/htl-templates/icons-templates.html"
+                 data-sly-call="${template.main @ iconName='timer'}"></sly>
+            <span>${playingTime} MIN</span>
+        </div>
+
+        <sly data-sly-test="${source == 'dam'}">
+
+        </sly>
+        <sly data-sly-test="${source == 'youtube'}">
+            <iframe width="800" height="450"
+                    src="${fileReference}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </sly>
+
+        <sly data-sly-use.template="/apps/ati4/components/text/v1/text/templates/text-templates.html"
+             data-sly-call="${template.main @ text=description, standalone=false}"></sly>
+    </div>
+</template>

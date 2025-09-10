@@ -1,0 +1,33 @@
+.video-wrapper {
+    max-width: 800px;
+    margin: 80px 0;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+
+    .title-wrapper h3 {
+        font-size: 2.375rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .video-reading-time {
+        display: flex;
+        gap: 10px;
+        background-color:rgb(242, 246, 247);
+        padding: 10px 6px;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    iframe, video {
+        width: 800px;
+        height: 450px;
+    }
+
+    .text-wrapper {
+        text-align: center;
+        font-size: 1.25rem;
+    }
+}

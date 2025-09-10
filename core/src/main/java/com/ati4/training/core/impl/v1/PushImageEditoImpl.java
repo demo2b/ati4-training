@@ -1,12 +1,11 @@
 package com.ati4.training.core.impl.v1;
 
 import com.ati4.training.core.models.v1.PushImageEdito;
-import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
-import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.PostConstruct;
@@ -21,10 +20,10 @@ import java.util.List;
 )
 public class PushImageEditoImpl implements PushImageEdito {
 
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String mode;
 
-    @ChildResource
+    @ChildResource @Optional
     private Resource accordion;
 
     final private List<EditoItem> editoItems = new ArrayList<>();

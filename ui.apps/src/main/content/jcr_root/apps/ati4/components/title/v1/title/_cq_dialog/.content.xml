@@ -17,8 +17,7 @@
                         <items jcr:primaryType="nt:unstructured">
                             <text jcr:primaryType="nt:unstructured"
                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                  fieldDescription="Small text to be displayed in on top of the headline."
-                                  fieldLabel="Text Title"
+                                  fieldLabel="Title"
                                   name="./title"/>
                             <html-tag granite:id="htmltag"
                                       granite:class="cq-dialog-dropdown-showhide"

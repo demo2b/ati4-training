@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Video (v1)"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <properties
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Video"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <variation jcr:primaryType="nt:unstructured"
+                                       granite:class="cq-dialog-dropdown-showhide"
+                                       sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                       fieldLabel="Video Source"
+                                       name="./videoSource">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <dam jcr:primaryType="nt:unstructured" text="DAM" value="dam"/>
+                                    <youtube jcr:primaryType="nt:unstructured" text="Youtube" value="youtube"/>
+                                </items>
+                                <granite:data jcr:primaryType="nt:unstructured"
+                                              cq-dialog-dropdown-showhide-target=".variation-showhide-target"/>
+                            </variation>
+                            <container-dam jcr:primaryType="nt:unstructured"
+                                           granite:class="variation-showhide-target"
+                                           sling:resourceType="granite/ui/components/coral/foundation/container"
+                                           jcr:title="Simple display">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <asset jcr:primaryType="nt:unstructured"
+                                           sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                           allowUpload="{Boolean}false"
+                                           autoStart="{Boolean}false"
+                                           class="cq-droptarget"
+                                           fieldDescription="Path to the video in the DAM. Leave empty to not show the image"
+                                           fieldLabel="Video"
+                                           fileNameParameter="./fileName"
+                                           fileReferenceParameter="./fileReference"
+                                           mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                           multiple="{Boolean}false"
+                                           name="./file"
+                                           title="Video"
+                                           uploadUrl="${suffix.path}"
+                                           useHTML5="{Boolean}true"/>
+                                </items>
+                                <granite:data jcr:primaryType="nt:unstructured" showhidetargetvalue="dam"/>
+                            </container-dam>
+                            <container-youtube jcr:primaryType="nt:unstructured"
+                                               granite:class="variation-showhide-target"
+                                               sling:resourceType="granite/ui/components/coral/foundation/container"
+                                               jcr:title="Simple display">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <text jcr:primaryType="nt:unstructured"
+                                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                          fieldLabel="Video URL"
+                                          name="./videoUrl"/>
+                                </items>
+                                <granite:data jcr:primaryType="nt:unstructured" showhidetargetvalue="youtube"/>
+                            </container-youtube>
+                            <video-info-fieldset jcr:primaryType="nt:unstructured"
+                                            jcr:title="Video Informations"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title jcr:primaryType="nt:unstructured"
+                                           sling:resourceType="granite/ui/components/coral/foundation/include"
+                                           path="/apps/ati4/components/title/v1/title/cq:dialog/content/items/properties/items/column"/>
+                                    <text jcr:primaryType="nt:unstructured"
+                                          sling:resourceType="granite/ui/components/coral/foundation/include"
+                                          path="/apps/ati4/components/text/v1/text/cq:dialog/content/items/properties/items/column"/>
+                                    <play-time jcr:primaryType="nt:unstructured"
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                               fieldLabel="Playing Time"
+                                               max="6000"
+                                               min="1"
+                                               name="./playingTime"
+                                               step="1"
+                                               value="1"/>
+                                </items>
+                            </video-info-fieldset>
+                        </items>
+                    </column>
+                </items>
+            </properties>
+        </items>
+    </content>
+</jcr:root>

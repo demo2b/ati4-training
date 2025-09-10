@@ -20,6 +20,7 @@ body {
     .container {
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         &.hero-pink {
             background-image: radial-gradient(107.79% 77.19% at -43.89% 4.27%, hsla(4, 18%, 49%, .6) 0, hsla(15, 26%, 73%, 0) 100%);

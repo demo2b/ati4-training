@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Push Image Edito (v1)"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <properties
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Push Image Edito"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <direction jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                  fieldLabel="Push Direction"
+                                  name="./direction">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <right jcr:primaryType="nt:unstructured" text="Right" value="right"/>
+                                    <left jcr:primaryType="nt:unstructured" text="Left" value="left"/>
+                                </items>
+                            </direction>
+                            <image-fieldset jcr:primaryType="nt:unstructured"
+                                            jcr:title="Image"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <image jcr:primaryType="nt:unstructured"
+                                           sling:resourceType="granite/ui/components/coral/foundation/include"
+                                           path="/apps/ati4/components/image/v1/image/cq:dialog/content/items/properties/items/column"/>
+                                </items>
+                            </image-fieldset>
+                            <variation jcr:primaryType="nt:unstructured"
+                                       granite:class="cq-dialog-dropdown-showhide"
+                                       sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                       fieldLabel="Display Mode"
+                                       name="./mode">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <simple jcr:primaryType="nt:unstructured" text="Simple" value="simple"/>
+                                    <accordion jcr:primaryType="nt:unstructured" text="Accordion" value="accordion"/>
+                                </items>
+                                <granite:data jcr:primaryType="nt:unstructured" cq-dialog-dropdown-showhide-target=".variation-showhide-target"/>
+                            </variation>
+
+                            <container-simple jcr:primaryType="nt:unstructured"
+                                              granite:class="variation-showhide-target"
+                                              sling:resourceType="granite/ui/components/coral/foundation/container"
+                                              jcr:title="Simple display">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title-fieldset jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Title"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <title jcr:primaryType="nt:unstructured"
+                                                   sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                   path="/apps/ati4/components/title/v1/title/cq:dialog/content/items/properties/items/column"/>
+                                        </items>
+                                    </title-fieldset>
+                                    <text-fieldset jcr:primaryType="nt:unstructured"
+                                                   jcr:title="Text"
+                                                   sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <text jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                  path="/apps/ati4/components/text/v1/text/cq:dialog/content/items/properties/items/column"/>
+                                        </items>
+                                    </text-fieldset>
+                                    <cta-fieldset jcr:primaryType="nt:unstructured"
+                                                  jcr:title="CTA"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <text jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                  path="/apps/ati4/components/button/v1/button/cq:dialog/content/items/properties/items/column"/>
+                                        </items>
+                                    </cta-fieldset>
+                                </items>
+                                <granite:data jcr:primaryType="nt:unstructured" showhidetargetvalue="simple" />
+                            </container-simple>
+
+                            <container-accordion jcr:primaryType="nt:unstructured"
+                                              granite:class="variation-showhide-target"
+                                              sling:resourceType="granite/ui/components/coral/foundation/container"
+                                              jcr:title="Accordion display">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <accordion jcr:primaryType="nt:unstructured"
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                               composite="{Boolean}true">
+                                        <field jcr:primaryType="nt:unstructured"
+                                               sling:resourceType="granite/ui/components/coral/foundation/container"
+                                               name="./accordion">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <title-fieldset jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Title"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <title jcr:primaryType="nt:unstructured"
+                                                               sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                               path="/apps/ati4/components/title/v1/title/cq:dialog/content/items/properties/items/column"/>
+                                                    </items>
+                                                </title-fieldset>
+                                                <text-fieldset jcr:primaryType="nt:unstructured"
+                                                               jcr:title="Text"
+                                                               sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                              path="/apps/ati4/components/text/v1/text/cq:dialog/content/items/properties/items/column"/>
+                                                    </items>
+                                                </text-fieldset>
+                                            </items>
+                                        </field>
+                                    </accordion>
+                                </items>
+                                <granite:data jcr:primaryType="nt:unstructured" showhidetargetvalue="accordion" />
+                            </container-accordion>
+                        </items>
+                    </column>
+                </items>
+            </properties>
+        </items>
+    </content>
+</jcr:root>

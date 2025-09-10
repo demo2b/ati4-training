@@ -1,0 +1,6 @@
+<sly data-sly-test.hasContent="${properties.fileReference}"
+     data-sly-use.template="./templates/push-image-templates.html"
+     data-sly-call="${template.main @ fileReference=properties.fileReference, title=properties.title}"></sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty=!hasContent}">
+</sly>
