@@ -1,0 +1,45 @@
+.footer-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245 238 235 / 1);
+    padding: 120px 80px;
+    box-sizing: border-box;
+
+    footer {
+        width: 60%;
+
+        img {
+            height: 20px;
+        }
+
+        .horizontal-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+
+            .vertical-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+
+                .text-wrapper {
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+
+                .other-brands {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    svg {
+                        width: 160px;
+                    }
+                }
+            }
+        }
+    }
+}

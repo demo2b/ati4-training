@@ -1,5 +1,9 @@
 .text-wrapper p {
     color: rgb(7 41 57 / 1);
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 .container .text-wrapper.standalone {

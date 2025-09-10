@@ -1,5 +1,5 @@
-<nav class="navigation-wrapper">
-    <div class="navigation-top">
+<nav class="header-wrapper">
+    <header>
         <a class="navigation-logo" href="/"
              data-sly-use.template="/apps/ati4/components/image/v1/image/templates/image-templates.html"
              data-sly-call="${template.main @ imageReference='/content/dam/ati4/images/naos-logo.png'}"></a>
@@ -7,7 +7,7 @@
             <a href="#" data-sly-call="${template.main @ iconName='store-locator'}"></a>
             <a href="#" data-sly-call="${template.main @ iconName='my-account'}"></a>
         </div>
-    </div>
+    </header>
     <ul class="navigation-menu"
         data-sly-use.model="com.ati4.training.core.models.v1.Navigation"
         data-sly-test="${model.navigationPages.size > 0}"

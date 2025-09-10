@@ -1,0 +1,51 @@
+.quote-wrapper {
+    width: 950px;
+    margin: 80px 0;
+
+    blockquote {
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+        svg {
+            color: rgb(208 183 175 / 1);;
+            position: absolute;
+            z-index: -1;
+        }
+
+        > svg {
+            width: 80px;
+            margin: -25px 0 0 -36px;
+        }
+
+        .text-wrapper {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .quote-cite {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+
+            > svg {
+                width: 33px;
+                margin: -14px 156px 0 0
+            }
+
+            .author {
+                font-size: 1.25rem;
+                font-weight: 700;
+            }
+
+            .author-role {
+                font-size: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}

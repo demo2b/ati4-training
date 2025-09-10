@@ -8,7 +8,7 @@ import java.util.List;
 @ConsumerType
 public interface Navigation {
 
-    String RESOURCE_TYPE = "/apps/ati4-training/components/navigation/v1/navigation";
+    String RESOURCE_TYPE = "/apps/ati4-training/components/navigation/v1/header";
 
     List<Page> navigationPages();
 
