@@ -26,12 +26,11 @@ public class PushImageEditoImpl implements PushImageEdito {
     @ChildResource @Optional
     private Resource accordion;
 
-    final private List<EditoItem> editoItems = new ArrayList<>();
+    private final List<EditoItem> editoItems = new ArrayList<>();
 
     @PostConstruct
     protected void postConstruct() {
-        if(mode != null && mode.equals("accordion")) {
-            if(accordion != null && accordion.listChildren().hasNext()) {
+        if(mode != null && mode.equals("accordion") && accordion != null && accordion.listChildren().hasNext()) {
                 Iterator<Resource> iterator = accordion.listChildren();
                 while(iterator.hasNext()) {
                     Resource itemResource = iterator.next();
@@ -44,7 +43,7 @@ public class PushImageEditoImpl implements PushImageEdito {
                     editoItems.add(editoItem);
                 }
             }
-        }
+
     }
 
     @Override
